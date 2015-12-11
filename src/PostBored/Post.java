@@ -1,4 +1,4 @@
-package FirstVersion;
+package PostBored;
 
 import java.util.Date;
 
