@@ -10,6 +10,7 @@ public class PostCollection {
     private List<Post> posts;
 
     public PostCollection(List<Post> posts) {
+        this.posts = posts;
     }
 
     public Post getPost(int i) {
