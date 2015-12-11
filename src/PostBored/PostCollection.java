@@ -13,7 +13,7 @@ public class PostCollection {
     }
 
     public Post getPost(int i) {
-
+        //imutable collection, return all posts? , Check for index out of bounds
         return posts.get(i);
     }
 
