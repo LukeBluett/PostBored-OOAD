@@ -19,12 +19,12 @@ public class Search {
         }
     }
 
-    public Post searchByTag(String searchString) {
+    private Post searchByTag(String searchString) {
 
         return null;
     }
 
-    public Post searchByTitle(String searchString) {
+    private Post searchByTitle(String searchString) {
 
         return null;
     }
