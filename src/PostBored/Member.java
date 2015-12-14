@@ -3,7 +3,7 @@ package PostBored;
 /**
  *
  */
-public class Member {
+class Member {
 
     private int id;
     private String username;

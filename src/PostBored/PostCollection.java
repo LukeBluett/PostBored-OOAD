@@ -8,7 +8,7 @@ import java.util.List;
  */
 public class PostCollection {
 
-    private List<Post> posts;
+    private final List<Post> posts;
 
     public PostCollection(List<Post> posts) {
         this.posts = posts;
