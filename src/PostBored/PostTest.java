@@ -5,7 +5,7 @@ import java.util.Date;
 /**
  *
  */
-public class PostTest {
+class PostTest {
 
     public static void main(String[] args) {
 
@@ -26,17 +26,6 @@ public class PostTest {
         //for (int i = 0; i < 4; i++)
         //    System.out.println(pc.getPost(i).getTitle());
 
-
-        PostCollection results = pc.search("#cat");
-
-        for (int i = 0; i < results.size(); i++)
-            System.out.println(results.getPost(i).getId());
-
-        Post memes = pc.getPost(10);
-
-
-        Post stuff = new Post();
-        Member mem = new Member();
 
         //needs member to inherit from members to work
         //mem.addpost(stuff);
