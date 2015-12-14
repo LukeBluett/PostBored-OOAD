@@ -17,7 +17,7 @@ public class Member {
         this.password = "";
     }
 
-    public Member(String memberUsername, String memberEmail, String memberPassword) {
+    public Member(int id, String memberUsername, String memberEmail, String memberPassword) {
         this.id = id;
         this.username = memberUsername;
         this.email = memberEmail;
@@ -32,6 +32,7 @@ public class Member {
         this.id = id;
     }
 
+
     public String getUsername() {
         return username;
     }
@@ -40,6 +41,7 @@ public class Member {
         this.username = username;
     }
 
+
     public String getPassword() {
         return password;
     }
@@ -47,6 +49,7 @@ public class Member {
     public void setPassword(String password) {
         this.password = password;
     }
+
 
     public String getEmail() {
         return email;

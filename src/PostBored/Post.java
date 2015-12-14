@@ -25,13 +25,26 @@ public class Post {
         this.postTime = postTime;
     }
 
+    public Post(Post post) {
+        this.id = post.id;
+        this.title = post.title;
+        this.text = post.text;
+        this.tag = post.tag;
+        this.postTime = post.postTime;
+    }
+
     public int getId() {
         return id;
     }
 
+    /*
+    Commented out because Id should not be modifiable
+
     public void setId(int id) {
         this.id = id;
     }
+    */
+
 
     public String getTitle() {
         return title;
@@ -41,6 +54,7 @@ public class Post {
         this.title = title;
     }
 
+
     public String getText() {
         return text;
     }
@@ -49,6 +63,7 @@ public class Post {
         this.text = text;
     }
 
+
     public String getTag() {
         return tag;
     }
@@ -56,6 +71,7 @@ public class Post {
     public void setTag(String tag) {
         this.tag = tag;
     }
+
 
     public Date getPostTime() {
         return postTime;
