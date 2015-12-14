@@ -14,7 +14,7 @@ public class PostCollection {
         this.posts = posts;
     }
 
-    public PostCollection() {
+    private PostCollection() {
         this.posts = new ArrayList();
     }
 
@@ -30,7 +30,6 @@ public class PostCollection {
         posts.stream().filter(post -> post.getTitle().toLowerCase().matches(".*" + searchString.toLowerCase() + ".*")).forEach(searchResults::addPost);
         return searchResults;
     }
-
 
 
     public Post getPostById(int id) {
