@@ -8,7 +8,7 @@ import java.util.Date;
  *
  *
  */
-public class Comment {
+class Comment {
 
     private int id;
     private String text;
@@ -20,7 +20,7 @@ public class Comment {
 
     }
 
-    public Comment(int id, String text,Member member) {
+    public Comment(int id, String text, Member member) {
         this.id = id;
         this.text = text;
         this.commentTime = new Date();
@@ -32,7 +32,8 @@ public class Comment {
     public int getId() {
         return id;
     }
-    public Member getMemeber(){
+
+    public Member getMember() {
         return member;
     }
 
@@ -44,7 +45,7 @@ public class Comment {
         this.text = text;
     }
 
-    public Date getCommenttTime() {
+    public Date getCommentTime() {
         return commentTime;
     }
 
