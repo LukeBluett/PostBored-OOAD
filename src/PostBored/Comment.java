@@ -12,7 +12,8 @@ public class Comment {
     private String text;
     private Date commentTime;
     private Member member;
-    private Calendar cal;
+
+
     public Comment() {
 
     }
@@ -20,8 +21,7 @@ public class Comment {
     public Comment(int id, String text,Member member) {
         this.id = id;
         this.text = text;
-        cal = Calendar.getInstance();
-        this.commentTime = cal.getTime();
+        this.commentTime = new Date();
         this.member = member;
     }
 
