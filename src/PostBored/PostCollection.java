@@ -18,23 +18,20 @@ public class PostCollection {
         this.posts = new ArrayList();
     }
 
-    public PostCollection search(String searchString) {
-        boolean isTag = searchString.charAt(0) == '#';
-        searchString = searchString.toLowerCase().substring(1, searchString.length());
-        System.out.println(searchString);
 
+    public PostCollection searchTag(String searchString) {
         PostCollection searchResults = new PostCollection();
-
-        for (Post post : posts) {
-            if (isTag && post.getTag().equalsIgnoreCase(searchString)) {
-                searchResults.addPost(post);
-            }
-            if (!isTag && post.getTitle().equalsIgnoreCase(searchString)) {
-                searchResults.addPost(post);
-            }
-        }
+        posts.stream().filter(post -> post.getTag().toLowerCase().matches(".*" + searchString.toLowerCase() + ".*")).forEach(searchResults::addPost);
         return searchResults;
     }
+
+    public PostCollection searchTitle(String searchString) {
+        PostCollection searchResults = new PostCollection();
+        posts.stream().filter(post -> post.getTitle().toLowerCase().matches(".*" + searchString.toLowerCase() + ".*")).forEach(searchResults::addPost);
+        return searchResults;
+    }
+
+
 
     public Post getPostById(int id) {
         for (Post post : posts) {
