@@ -12,39 +12,37 @@ public class Post {
     private String text;
     private String tag;
     private Date postTime;
+    private Member member;
 
     public Post() {
 
     }
 
-    public Post(int id, String title, String text, String tag, Date postTime) {
+    public Post(int id, Member member, String title, String text, String tag) {
         this.id = id;
+        this.member = member;
         this.title = title;
         this.text = text;
         this.tag = tag;
-        this.postTime = postTime;
+        this.postTime = new Date();
     }
 
     public Post(Post post) {
         this.id = post.id;
+        this.member = post.member;
         this.title = post.title;
         this.text = post.text;
         this.tag = post.tag;
-        this.postTime = post.postTime;
+        this.postTime = post.getPostTime();
     }
 
     public int getId() {
         return id;
     }
 
-    /*
-    Commented out because Id should not be modifiable
-
-    public void setId(int id) {
-        this.id = id;
+    public Member getMember() {
+        return member;
     }
-    */
-
 
     public String getTitle() {
         return title;
@@ -77,7 +75,4 @@ public class Post {
         return postTime;
     }
 
-    public void setPostTime(Date postTime) {
-        this.postTime = postTime;
-    }
 }
