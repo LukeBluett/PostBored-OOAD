@@ -38,9 +38,11 @@ class PostTest {
         System.out.println(postCollection.getById(3).getTitle());
         System.out.println(postCollection.getById(3).getCommentById(1).getText());
 
+
         PostCollection searchResults = postCollection.searchTitle("cat");
-        for (int i = 0; i < searchResults.size(); i++) {
-            System.out.println(searchResults.get(i).getTitle());
+
+        for (MainPost mainPost : searchResults) {
+            System.out.println(mainPost.getTitle());
         }
     }
 }

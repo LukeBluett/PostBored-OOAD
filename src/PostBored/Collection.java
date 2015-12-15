@@ -1,5 +1,6 @@
 package PostBored;
 
+import java.util.Iterator;
 import java.util.List;
 
 /**
@@ -26,4 +27,7 @@ abstract class Collection<T> {
 
     public abstract T getById(int id);
 
+    public Iterator<T> iterator() {
+        return collection.iterator();
+    }
 }

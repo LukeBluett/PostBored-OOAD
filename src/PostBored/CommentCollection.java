@@ -5,7 +5,7 @@ import java.util.List;
 /**
  *
  */
-public class CommentCollection extends Collection<Comment> {
+public class CommentCollection extends Collection<Comment> implements Iterable<Comment> {
 
     public CommentCollection(List<Comment> comments) {
 

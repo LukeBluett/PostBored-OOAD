@@ -6,7 +6,7 @@ import java.util.List;
 /**
  *
  */
-public class PostCollection extends Collection<MainPost> {
+public class PostCollection extends Collection<MainPost> implements Iterable<MainPost> {
 
 
     public PostCollection(List<MainPost> collection) {
