@@ -6,53 +6,35 @@ import java.util.List;
 /**
  *
  */
-public class PostCollection {
+public class PostCollection extends Collection<MainPost> {
 
-    private final List<Post> posts;
 
-    public PostCollection(List<Post> posts) {
-        this.posts = posts;
+    public PostCollection(List<MainPost> collection) {
+        this.collection = collection;
     }
 
     private PostCollection() {
-        this.posts = new ArrayList();
+        this.collection = new ArrayList<>();
     }
-
 
     public PostCollection searchTag(String searchString) {
         PostCollection searchResults = new PostCollection();
-        posts.stream().filter(post -> post.getTag().toLowerCase().matches(".*" + searchString.toLowerCase() + ".*")).forEach(searchResults::addPost);
+        collection.stream().filter(post -> post.getTag().toLowerCase().matches(".*" + searchString.toLowerCase() + ".*")).forEach(searchResults::add);
         return searchResults;
     }
 
     public PostCollection searchTitle(String searchString) {
         PostCollection searchResults = new PostCollection();
-        posts.stream().filter(post -> post.getTitle().toLowerCase().matches(".*" + searchString.toLowerCase() + ".*")).forEach(searchResults::addPost);
+        collection.stream().filter(post -> post.getTitle().toLowerCase().matches(".*" + searchString.toLowerCase() + ".*")).forEach(searchResults::add);
         return searchResults;
     }
 
-
-    public Post getPostById(int id) {
-        for (Post post : posts) {
-            if (post.getId() == id) {
-                return new Post(post);
+    public MainPost getById(int id) {
+        for (MainPost mainPost : collection) {
+            if (mainPost.getId() == id) {
+                return mainPost;
             }
         }
         return null;
-    }
-
-    public Post getPost(int index) {
-        if (posts.size() > index) {
-            return new Post(posts.get(index));
-        }
-        return null;
-    }
-
-    public void addPost(Post post) {
-        posts.add(post);
-    }
-
-    public int size() {
-        return posts.size();
     }
 }

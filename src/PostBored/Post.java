@@ -2,44 +2,39 @@ package PostBored;
 
 import java.util.Date;
 
-/**
- *
- */
-class Post extends PostData {
 
-    private String title;
-    private String tag;
+abstract class Post {
 
-    public Post() {
+    private int id;
+    private String text;
+    private Date postTime;
+    private Member member;
 
+    Post(int id, Member member, String text, Date postTime) {
+        this.id = id;
+        this.member = member;
+        this.text = text;
+        this.postTime = postTime;
     }
 
-    public Post(int id, Member member, String title, String text, String tag) {
-        super(id, member, text, new Date());
-        this.title = title;
-        this.tag = tag;
+    public int getId() {
+        return id;
     }
 
-    public Post(Post post) {
-        super(post.getId(), post.getMember(), post.getText(), post.getPostTime());
-        this.title = post.getTitle();
-        this.tag = post.getTag();
+    Member getMember() {
+        return member;
     }
 
-    public String getTitle() {
-        return title;
+    String getText() {
+        return text;
     }
 
-    public void setTitle(String title) {
-        this.title = title;
+    Date getPostTime() {
+        return postTime;
     }
 
-    public String getTag() {
-        return tag;
-    }
-
-    public void setTag(String tag) {
-        this.tag = tag;
+    public void setText(String text) {
+        this.text = text;
     }
 
 }
