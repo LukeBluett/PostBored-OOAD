@@ -20,7 +20,7 @@ abstract class Collection<T> {
         collection.add(object);
     }
 
-    private int size() {
+    public int size() {
         return collection.size();
     }
 
